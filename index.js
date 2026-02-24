@@ -1,6 +1,7 @@
 import express from "express"
 import dbConnect from "./config/db.js"
 import userRouter from "./routes/userRoute.js"
+import productRouter from "./routes/productRoute.js"
 const app=express()
 const startServer=async()=>{
     await dbConnect();
@@ -12,3 +13,4 @@ const startServer=async()=>{
 startServer();
 app.use(express.json())
 app.use("/api/users",userRouter)
+app.use("/api/products",productRouter)
