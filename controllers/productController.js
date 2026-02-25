@@ -14,4 +14,10 @@ const deleteProduct = async (req, res) => {
   const result = await productModel.findByIdAndDelete(id);
   res.json(result);
 };
-export { addProduct, showProducts, deleteProduct};
+const updateProduct = async (req, res) => {
+  const id = req.params.id;
+  const product=req.body;
+  const result = await productModel.findByIdAndUpdate(id.product);
+  res.json(result);
+};
+export { addProduct, showProducts, deleteProduct,updateProduct};
